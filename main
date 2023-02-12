@@ -1,0 +1,48 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+void main()
+{
+int a,b,k=1,opt;
+clrscr();
+start:
+printf("\n\nExit - 0\nPlay - 1\nEnter : ");
+scanf("%d",&opt);
+switch(opt)
+{
+	case 0:
+	{
+	 goto end;
+	}
+	case 1:
+	{
+		printf("\nI have chosen a number , try to guess it !!");
+		a=rand()+k;
+		//printf("\n%d",a);
+		printf("\nEnter a number : ");
+		scanf("%d",&b);
+		k=1;
+		while(b!=a)
+		{
+		if(b>a)
+		{
+			printf("LOWER!\n");
+			k++;
+		}
+		else
+		{
+			printf("Higher\n");
+			k++;
+		}
+		printf("\nTry Again : ");
+		scanf("%d",&b);
+		}
+	}
+}
+printf("\nYou have guessed it right!!");
+printf("\nYou took %d attempts to get to it.",k);
+goto start;
+
+end:
+getch();
+}
